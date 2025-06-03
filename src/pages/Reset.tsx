@@ -46,7 +46,7 @@ export default function Reset() {
         <button
         type="submit"
         disabled={loading}
-        className='border-1 rounded-md w-50 h-10 bg-blue-400 hover:bg-blue-600 font-bold text-white'
+        className='border-1 rounded-md w-50 h-10 bg-blue-400 hover:bg-blue-600 font-bold text-white border-black'
         >
           {loading ? 'Отправка...' : 'Сбросить пароль'}
         </button>
@@ -61,7 +61,7 @@ export default function Reset() {
           </div>
 
 
-          <button className=' bg-green-600 hover:bg-green-700 w-50 h-10 rounded-md text-white font-bold cursor-pointer'>
+          <button className='border-black border-1 bg-green-600 hover:bg-green-700 w-50 h-10 rounded-md text-white font-bold cursor-pointer'>
             <Link to="/signup">
               <p>Создать новый аккаунт</p>
             </Link>

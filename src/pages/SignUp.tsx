@@ -50,14 +50,14 @@ export default function SignUp() {
             value={password}
             onChange={e => setPassword(e.target.value)}
             required
-            placeholder=' Пароль'
+            placeholder='Пароль'
         />
 
         {error && <p style={{ color: 'red' }}>{error}</p>}
         {message && <p style={{ color: 'green' }}>{message}</p>}
 
         <div className='flex flex-col'>
-        <button type="submit" disabled={loading} className='bg-blue-300 hover:bg-blue-500 border-1 cursor-pointer w-50 h-10 rounded-lg  '>
+        <button type="submit" disabled={loading} className='bg-blue-500 hover:bg-blue-600 border-black border-1 cursor-pointer w-50 h-10 rounded-lg text-amber-50 font-bold'>
             {loading ? 'Создание...' : 'Зарегистрироваться'}
         </button>
 

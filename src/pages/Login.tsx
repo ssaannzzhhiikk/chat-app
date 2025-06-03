@@ -22,7 +22,8 @@ export default function Login() {
       setError(error.message)
     } else {
       // Успешный логин — обнови состояние или редирект
-      window.location.href = '/'
+      window.location.href = '/chat'
+
     }
 
     setLoading(false)
@@ -55,20 +56,19 @@ export default function Login() {
 
                 {error && <p className='text-red-500'>{error}</p>}
 
-                <button type="submit" disabled={loading} className=' bg-blue-400 hover:bg-blue-500 w-60 h-10 rounded-md text-white font-bold cursor-pointer'>
+                <button type="submit" disabled={loading} className=' bg-blue-500 hover:bg-blue-600 w-60 h-10 rounded-md text-white font-bold cursor-pointer border-black border-1'>
                     {loading ? 'Входим...' : 'Войти'}
                 </button>
 
                 <hr className="w-full border border-gray-300" />
 
-                <button className=' bg-green-600 hover:bg-green-700 w-60 h-10 rounded-md text-white font-bold cursor-pointer'>
-                    <Link to="/signup">
-                    <p>Создать новый аккаунт</p>
-                    </Link>
-                </button>
+                <Link to="/signup" className=' bg-green-600 hover:bg-green-700 w-60 h-10 rounded-md text-white font-bold cursor-pointer flex justify-center items-center border-black border-1'>
+                  <p className=''>Создать новый аккаунт</p>
+                </Link>
+
                 
                 <Link to="/reset">
-                    <p className='hover:underline'>Забыли пароль ?</p>
+                    <p className='hover:underline text-blue-600'>Забыли пароль ?</p>
                 </Link>
 
             </div>
