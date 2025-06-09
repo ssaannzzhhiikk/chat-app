@@ -1,3 +1,4 @@
+//chatlist.tsx
 import ChatItem from './ChatItem';
 import React from 'react';
 
@@ -13,12 +14,12 @@ interface ChatListProps {
 
 const ChatList: React.FC<ChatListProps> = ({ chats }) => {
   return (
-    <div className='flex flex-col h-screen w-1/5 bg-blue-500'>
+    <div className='flex flex-col w-[300px] h-full bg-white'>
       <div className='h-15 flex items-center bg-white border-b p-3'>
         <h1 className='text-2xl font-black'>Chats</h1>
       </div>
 
-      <div className='overflow-y-auto'>
+      <div className='flex-1 overflow-y-auto'>
         {chats.map((chat, index) => (
           <ChatItem
             key={index}

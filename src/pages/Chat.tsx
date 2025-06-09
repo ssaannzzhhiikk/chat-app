@@ -1,3 +1,4 @@
+//chat.tsx
 import ChatList from '../components/ChatList';
 import ChatRoom from '../components/ChatRoom';
 
@@ -20,7 +21,7 @@ const testlist = [
 
 export default function Chat() {
   return (
-    <div className='flex'>
+    <div className='flex h-full'>
       <ChatList chats={testlist} />
       <ChatRoom />
     </div>
