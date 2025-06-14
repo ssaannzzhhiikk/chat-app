@@ -6,7 +6,6 @@ export default function ProtectedRoute({ children }: { children: React.ReactElem
   const context = useUser()
 
   if (!context) {
-    // Контекст ещё не готов — можно отобразить загрузку или null
     return <p>Загрузка контекста...</p>
   }
 
@@ -16,3 +15,6 @@ export default function ProtectedRoute({ children }: { children: React.ReactElem
   if (!user) return <Navigate to="/login" replace />
   return children
 }
+
+
+// Has to be improved
