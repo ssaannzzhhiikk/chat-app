@@ -1,8 +1,22 @@
+import React from 'react'
 
 
-function Message() {
+interface SendedMsgProps {
+  userName: string;
+  lastMsgTime: string;
+  lastMsg: string;
+}
+
+
+const Message: React.FC<SendedMsgProps> = ({ lastMsg, lastMsgTime, userName }) => {
+
   return (
-    <div>Message</div>
+    <div className=''>
+      {lastMsgTime}
+      {lastMsg}
+      {userName}
+    </div>
+
   )
 }
 

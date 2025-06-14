@@ -2,7 +2,7 @@
 import ChatList from '../components/ChatList';
 import ChatRoom from '../components/ChatRoom';
 
-const testlist = [
+export const testlist = [
   { userName: 'Sanzhar', lastMsgTime: '12:15', lastMsg: 'hello' },
   { userName: 'Alex', lastMsgTime: '12:01', lastMsg: 'How are you?' },
   { userName: 'Amina', lastMsgTime: '12:02', lastMsg: 'bebebeb' },
@@ -23,7 +23,7 @@ export default function Chat() {
   return (
     <div className='flex h-full'>
       <ChatList chats={testlist} />
-      <ChatRoom />
+      <ChatRoom data={testlist} />
     </div>
     
     
