@@ -1,4 +1,3 @@
-//chatroom.tsx
 import { useEffect, useState } from 'react';
 
 import BasicMenu from "./BasicMenu"
@@ -6,7 +5,7 @@ import { supabase } from '../supabase/client';
 
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
-
+import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 
 
 
@@ -89,21 +88,29 @@ function ChatRoom({ currentUser, partner, goBack }: any) {
       sender_id: currentUser.id,
       content: input
     }])
+     setInput("")
   }
 
-  if (!currentUser || !partner) {
-    return <div>Loading chat...</div>;
-  }
+  if (!chatId) {
+  return (
+    <div className="flex items-center justify-center h-full text-gray-500">
+      Подключение к чату...
+    </div>
+  );
+}
+
 
   return (
     <div className="flex flex-col flex-1 h-full bg-blue-200">
       <div className="bg-white flex justify-between h-16 items-center px-3">
         <div className="flex items-center gap-2">
+          <button onClick={goBack} className="w-8 h-8 text-black hover:bg-gray-100 rounded-full not-first:">
+            <ArrowBackIosNewRoundedIcon />
+          </button>
           <img src="../../avatar.png" alt="userAvatar" className='w-10 h-10 rounded-full object-cover' />
           <h1>{partner.username}</h1>
         </div>
         <div className="flex items-center ">
-          <button onClick={goBack} className="mb-4 text-blue-500">← Назад</button>
           <SearchRoundedIcon
           sx={{
             "&:hover":{backgroundColor: '#D3D3D3'},

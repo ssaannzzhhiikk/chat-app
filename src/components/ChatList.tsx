@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { supabase } from '../supabase/client'; // ваш экспортированный клиент
+import { supabase } from '../supabase/client';
 import ChatWindow from './ChatRoom';
 
 export default function UsersList() {
