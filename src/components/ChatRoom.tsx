@@ -88,7 +88,7 @@ function ChatRoom({ currentUser, partner, goBack }: any) {
       sender_id: currentUser.id,
       content: input
     }])
-     setInput("")
+    setInput("")
   }
 
   if (!chatId) {
@@ -126,15 +126,22 @@ function ChatRoom({ currentUser, partner, goBack }: any) {
 
       
       <div className='flex flex-col h-full max-h-screen'>
-        <div className='flex flex-col-reverse items-end flex-1 overflow-y-auto p-4'>
-          <div className='border-1 bg-white rounded-lg '>
+        <div className={`flex flex-1 overflow-y-auto p-4 `}>
+          <div className=' flex flex-col justify-end w-full bg-blue-200 rounded-lg '>
+           
             {messages.map(msg => (
+              
               <div key={msg.id} className={`mb-1 ${msg.sender_id === currentUser.id ? 'text-right' : 'text-left'}`}>
+                
+                <p>{msg.sender_id === currentUser.id ? 'you' : 'guest'}</p>
+
                 <span className="inline-block bg-white px-2 py-1 rounded shadow">
                   {msg.content}
                 </span>
+
               </div>
             ))}
+
           </div>
 
 
