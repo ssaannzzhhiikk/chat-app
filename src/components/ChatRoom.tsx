@@ -93,20 +93,25 @@ function ChatRoom({ currentUser, partner, goBack }: any) {
 
   if (!chatId) {
   return (
-    <div className="flex items-center justify-center h-full text-gray-500">
-      Подключение к чату...
+    <div className="flex items-center justify-center h-full border-l-1">
+      <p className='border-1 rounded-lg bg-gray-200 text-black border-black'>Select chat to start messaging </p>
+      
     </div>
   );
 }
 
 
   return (
-    <div className="flex flex-col flex-1 h-full bg-blue-200">
-      <div className="bg-white flex justify-between h-16 items-center px-3">
-        <div className="flex items-center gap-2">
+    <div className="flex flex-col flex-1 h-full bg-amber-50 border-l-1">
+      <div className="bg-white border-1 rounded-lg m-2 flex justify-between h-16 items-center px-3">
+        <div className="flex items-center gap-2 ">
+          {/*
           <button onClick={goBack} className="w-8 h-8 text-black hover:bg-gray-100 rounded-full not-first:">
             <ArrowBackIosNewRoundedIcon />
           </button>
+          */}
+
+          
           <img src="../../avatar.png" alt="userAvatar" className='w-10 h-10 rounded-full object-cover' />
           <h1>{partner.username}</h1>
         </div>
@@ -127,7 +132,7 @@ function ChatRoom({ currentUser, partner, goBack }: any) {
       
       <div className='flex flex-col h-full max-h-screen'>
         <div className={`flex flex-1 overflow-y-auto p-4 `}>
-          <div className=' flex flex-col justify-end w-full bg-blue-200 rounded-lg '>
+          <div className=' flex flex-col justify-end w-full bg-amber-50 rounded-lg '>
            
             {messages.map(msg => (
               
@@ -135,8 +140,9 @@ function ChatRoom({ currentUser, partner, goBack }: any) {
                 
                 <p>{msg.sender_id === currentUser.id ? 'you' : 'guest'}</p>
 
-                <span className="inline-block bg-white px-2 py-1 rounded shadow">
+                <span className={`inline-block px-2 py-1 rounded shadow  ${msg.sender_id === currentUser.id ? 'bg-blue-300' : 'bg-red-200'}`}>
                   {msg.content}
+                  {msg.created_at}
                 </span>
 
               </div>
@@ -148,7 +154,7 @@ function ChatRoom({ currentUser, partner, goBack }: any) {
 
         </div>
 
-        <div className='p-4 border-t bg-white flex gap-2'>
+        <div className='p-4 m-2 rounded-lg border-1 bg-white flex gap-2'>
           <input type="text" 
           placeholder="Type a message..."
           value={input}
