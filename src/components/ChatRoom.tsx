@@ -5,11 +5,11 @@ import { supabase } from '../supabase/client';
 
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
-import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
+//import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
+//add goBack to chatroom ChatRoom({ currentUser, partner, goBack }: any) 
 
 
-
-function ChatRoom({ currentUser, partner, goBack }: any) {
+function ChatRoom({ currentUser, partner }: any) {
   const [chatId, setChatId] = useState<string | null>(null);
   const [messages, setMessages] = useState<any[]>([]);
   const [input, setInput] = useState('');
