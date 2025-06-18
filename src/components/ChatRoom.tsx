@@ -86,6 +86,7 @@ function ChatRoom({ currentUser, partner }: any) {
     await supabase.from('messages').insert([{
       chat_id: chatId,
       sender_id: currentUser.id,
+      receiver_id: partner.id,
       content: input
     }])
     setInput("")
@@ -130,8 +131,8 @@ function ChatRoom({ currentUser, partner }: any) {
 
 
       
-      <div className='flex flex-col h-full max-h-screen'>
-        <div className={`flex flex-1 overflow-y-auto p-4 `}>
+      <div className='flex flex-col h-full max-h-screen overflow-hidden'>
+        <div className='flex-1 overflow-y-auto px-4 py-2'>
           <div className=' flex flex-col justify-end w-full bg-amber-50 rounded-lg '>
            
             {messages.map(msg => (
@@ -141,17 +142,25 @@ function ChatRoom({ currentUser, partner }: any) {
                 <p>{msg.sender_id === currentUser.id ? 'you' : 'guest'}</p>
 
                 <span className={`inline-block px-2 py-1 rounded shadow  ${msg.sender_id === currentUser.id ? 'bg-blue-300' : 'bg-red-200'}`}>
-                  {msg.content}
-                  {msg.created_at}
+                  <div className='flex gap-4'>
+                    <span>{msg.content}</span>
+                    <p className='text-gray-400'>
+                      {msg.created_at
+                        ? new Date(msg.created_at).toLocaleTimeString([], {
+                          hour: '2-digit',
+                          minute: '2-digit',
+                        })
+                      : ''}
+                    </p>
+                  </div>
+
+
                 </span>
 
               </div>
             ))}
 
           </div>
-
-
-
         </div>
 
         <div className='p-4 m-2 rounded-lg border-1 bg-white flex gap-2'>
