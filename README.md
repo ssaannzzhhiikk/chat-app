@@ -26,6 +26,7 @@
 ---
 
 ## 📁 Структура проекта
+```
 src/
 ├── auth/ # Компоненты авторизации и защиты маршрутов
 ├── components/ # ChatRoom, ChatList, BasicMenu и др.
@@ -34,21 +35,29 @@ src/
 ├── supabase/ # Supabase клиент
 ├── App.tsx # Корневой компонент
 ├── main.tsx # Точка входа
-
+```
 ---
 
 ## 🛠️ Установка и запуск
 
 1. **Клонируй репозиторий**
    ```bash
-   git clone https://github.com/your-username/chat-app.git
+   #1 Клонируйте репозиторий
+   git clone https://github.com/ssaannzzhhiikk/chat-app
+
+   #2 Откройте файл проекта
    cd chat-app
+
+   #3 Устноавите необходимые зависимости:
    npm install
-   Создай .env файл
+
+   #5
+   Создай .env файл с link & key из SupaBase
+    VITE_SUPABASE_URL=https://your-project.supabase.co
+    VITE_SUPABASE_KEY=your-anon-key
+
+   #4 Запустите проект
    npm run dev
 
 
-Создай .env файл с 
-VITE_SUPABASE_URL=https://your-project.supabase.co
-VITE_SUPABASE_KEY=your-anon-key
 ---
