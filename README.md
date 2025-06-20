@@ -67,7 +67,7 @@ src/
 Чтобы развернуть структуру базы данных:
 
 1. Перейди в [SQL Editor на Supabase](https://app.supabase.com/project/_/sql)
-2. Скопируй содержимое из [supabase/supabase_schema.sql](./supabase/supabase_schema.sql)
+2. Скопируй содержимое из [supabase/supabase_schema.sql](./src/supabase/supabase_schema.sql)
 3. Вставь и выполни код
 
 📄 Этот файл содержит:
