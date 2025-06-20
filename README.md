@@ -1,54 +1,54 @@
-# React + TypeScript + Vite
+# 💬 ChatVerse — Реальное время, Supabase + React чат
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**ChatVerse** — это веб-приложение для обмена сообщениями в реальном времени, созданное с использованием React, TypeScript и Supabase. Проект демонстрирует ключевые возможности: аутентификация, обмен сообщениями, подписка на обновления и работа с базой данных.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Стек технологий
 
-## Expanding the ESLint configuration
+- ⚛️ **React** + **TypeScript**
+- 💨 **Tailwind CSS** — адаптивная и быстрая стилизация
+- 🐘 **Supabase** — авторизация, подписки, база данных
+- ⚙️ **Vite** — быстрый dev-сервер и сборка
+- 📦 **npm** — менеджер пакетов
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🧩 Функциональность
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 🔐 Регистрация и вход с помощью Supabase Auth
+- 💬 Отправка и получение сообщений в реальном времени
+- 💾 Сохранение сообщений в базе данных Supabase
+- ♻️ Сброс пароля
+- 🛡️ Защищённые маршруты через `ProtectedRoute`
+- ⚡ Адаптивный интерфейс с TailwindCSS
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📁 Структура проекта
+src/
+├── auth/ # Компоненты авторизации и защиты маршрутов
+├── components/ # ChatRoom, ChatList, BasicMenu и др.
+├── contexts/ # Контекст авторизации пользователя
+├── pages/ # Chat, Login, SignUp, Reset
+├── supabase/ # Supabase клиент
+├── App.tsx # Корневой компонент
+├── main.tsx # Точка входа
+
+---
+
+## 🛠️ Установка и запуск
+
+1. **Клонируй репозиторий**
+   ```bash
+   git clone https://github.com/your-username/chat-app.git
+   cd chat-app
+   npm install
+   Создай .env файл
+   npm run dev
+
+
+Создай .env файл с 
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_KEY=your-anon-key
+---
